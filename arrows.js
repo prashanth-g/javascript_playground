@@ -24,4 +24,4 @@ var func = {
   }
   
 func.b(); 
-func.c(); // prints 10, Object {...}
+func.c(); 
