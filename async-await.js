@@ -12,16 +12,16 @@ var add = async function(time, input) {
     return input+a+b;
 }
 
-add(2000, 10).then(v => {
+add(1000, 10).then(v => {
     console.log(v);
 });
 
 // concurrent start
-var resolveIn3Seconds = function() {
-    console.log("starting resolveIn3Seconds");
+var resolveIn2Seconds = function() {
+    console.log("starting resolveIn2Seconds");
     return new Promise(resolve => {
       setTimeout(function() {
-        console.log("slow resolveIn3Seconds is done");
+        console.log("slow resolveIn2Seconds is done");
       }, 3000);
     });
 };
@@ -37,7 +37,7 @@ var resolveIn1Second = function() {
   
 var concurrentStart = async function() {
 
-    const slow = resolveIn3Seconds();  
+    const slow = resolveIn2Seconds();  
     const fast = resolveIn1Second();
   
     console.log(await slow);
